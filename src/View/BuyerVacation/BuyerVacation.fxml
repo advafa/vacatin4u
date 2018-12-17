@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.BuyerVacation.BuyerVacation">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <TreeTableView fx:id="packageTable" layoutX="-128.0" layoutY="35.0" prefHeight="305.0" prefWidth="662.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0">
+                     <columns>
+                        <TreeTableColumn fx:id="colStartDate" prefWidth="75.0" text="Vacation Code" />
+                        <TreeTableColumn fx:id="colOwnerEmail" prefWidth="75.0" text="Seller Name" />
+                        <TreeTableColumn fx:id="colProductId" prefWidth="75.0" text="Submit Status" />
+                     </columns>
+                     <columnResizePolicy>
+                        <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TreeTableView>
+                  <Button layoutX="113.0" layoutY="347.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="154.0" text="Buy now" />
+                  <Button layoutX="331.0" layoutY="347.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="154.0" text="More Details" />
+               </children>
+            </AnchorPane>
+            <MenuBar prefHeight="10.0" prefWidth="662.0">
+               <menus>
+                  <Menu fx:id="profile" mnemonicParsing="false" text="My Profil">
+                     <items>
+                        <MenuItem fx:id="View_profile1" mnemonicParsing="false" text="Sign Up" />
+                        <MenuItem fx:id="View_profile" mnemonicParsing="false" text="View" />
+                        <MenuItem fx:id="Edit_profile" mnemonicParsing="false" text="Edit" />
+                        <MenuItem fx:id="Delete_profile" mnemonicParsing="false" text="Delete" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Sell Vacation">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="New Vacation" />
+                        <MenuItem mnemonicParsing="false" text="View Vacation" />
+                        <MenuItem mnemonicParsing="false" text="Edit Vacation" />
+                        <MenuItem mnemonicParsing="false" text="Delete Vacation" />
+                        <MenuItem mnemonicParsing="false" text="suggestion" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Buy Now!">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Search vacation" />
+                        <MenuItem mnemonicParsing="false" text="My vacation Cart" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="profile1" mnemonicParsing="false" text="Log in">
+                     <items>
+                        <MenuItem fx:id="View_profile11" mnemonicParsing="false" text="Sign in" />
+                        <MenuItem fx:id="View_profil" mnemonicParsing="false" text="Sign out" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Exit">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Exit" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

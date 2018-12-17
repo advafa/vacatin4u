@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: #2D3447;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.SearchView.SearchViewController">
+   <children>
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: #000000;">
+         <children>
+            <AnchorPane layoutX="-2.0" layoutY="172.0" prefHeight="597.0" prefWidth="907.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <ScrollBar layoutY="28.0" orientation="VERTICAL" prefHeight="466.0" prefWidth="25.0" AnchorPane.bottomAnchor="103.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="28.0" />
+                  <TreeTableView fx:id="packageTable" layoutY="29.0" prefHeight="466.0" prefWidth="999.0" AnchorPane.bottomAnchor="102.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="29.0">
+                     <columns>
+                        <TreeTableColumn fx:id="colStartDate" prefWidth="75.0" text="Check in" />
+                        <TreeTableColumn fx:id="colEndDate" prefWidth="75.0" text="Check out" />
+                        <TreeTableColumn fx:id="colCategory" prefWidth="75.0" text="From" />
+                        <TreeTableColumn fx:id="colDescription" prefWidth="75.0" text="To" />
+                        <TreeTableColumn fx:id="colPrice" prefWidth="75.0" text="Price" />
+                        <TreeTableColumn fx:id="colProductId" prefWidth="75.0" text="Percent off" />
+                     </columns>
+                     <columnResizePolicy>
+                        <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TreeTableView>
+                  <Button layoutX="342.0" layoutY="533.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="228.0" text="More Details" />
+                  <Label layoutX="198.0" layoutY="486.0" prefHeight="40.0" prefWidth="516.0" text="Click on the wanted vacation and then click the botton for more details" textFill="WHITE" />
+               </children>
+            </AnchorPane>
+            <MenuBar prefHeight="10.0" prefWidth="662.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <menus>
+                  <Menu fx:id="profile" mnemonicParsing="false" text="My Profil">
+                     <items>
+                        <MenuItem fx:id="View_profile1" mnemonicParsing="false" text="Sign Up" />
+                        <MenuItem fx:id="View_profile" mnemonicParsing="false" text="View" />
+                        <MenuItem fx:id="Edit_profile" mnemonicParsing="false" text="Edit" />
+                        <MenuItem fx:id="Delete_profile" mnemonicParsing="false" text="Delete" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Sell Vacation">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="New Vacation" />
+                        <MenuItem mnemonicParsing="false" text="View Vacation" />
+                        <MenuItem mnemonicParsing="false" text="Edit Vacation" />
+                        <MenuItem mnemonicParsing="false" text="Delete Vacation" />
+                        <MenuItem mnemonicParsing="false" text="suggestion" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Buy Now!">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Search vacation" />
+                        <MenuItem mnemonicParsing="false" text="My vacation Cart" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="profile1" mnemonicParsing="false" text="Log in">
+                     <items>
+                        <MenuItem fx:id="View_profile11" mnemonicParsing="false" text="Sign in" />
+                        <MenuItem fx:id="View_profil" mnemonicParsing="false" text="Sign out" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Exit">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Exit" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+            <GridPane fx:id="hotel" layoutX="29.0" layoutY="47.0" prefHeight="76.0" prefWidth="802.0" style="-fx-background-color: #000000;" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="193.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="262.0" minWidth="10.0" prefWidth="209.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="262.0" minWidth="10.0" prefWidth="169.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="262.0" minWidth="10.0" prefWidth="199.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="285.0" minWidth="10.0" prefWidth="229.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="48.0" minHeight="9.0" prefHeight="24.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="97.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label prefHeight="21.0" prefWidth="130.0" text="Check in" textFill="WHITE" />
+                  <Label layoutX="10.0" layoutY="19.0" prefHeight="21.0" prefWidth="130.0" text="Check out" textFill="WHITE" GridPane.columnIndex="1" />
+                  <Label layoutX="10.0" layoutY="57.0" prefHeight="21.0" prefWidth="130.0" text="To" textFill="WHITE" GridPane.columnIndex="3" />
+                  <Label layoutX="10.0" layoutY="110.0" prefHeight="21.0" prefWidth="130.0" text="From" textFill="WHITE" GridPane.columnIndex="2" />
+                  <DatePicker id="StartDatePicker" prefHeight="31.0" prefWidth="197.0" GridPane.rowIndex="1" />
+                  <DatePicker id="StartDatePicker" layoutX="10.0" layoutY="84.0" prefHeight="31.0" prefWidth="165.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ComboBox fx:id="from" layoutX="342.0" layoutY="269.0" prefHeight="31.0" prefWidth="181.0" promptText="From" value="Israel" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <items>
+                        <FXCollections fx:factory="observableArrayList">
+                           <String fx:value="Austria" />
+                           <String fx:value="Brazil" />
+                           <String fx:value="China" />
+                           <String fx:value="Denmark" />
+                           <String fx:value="Egypt" />
+                           <String fx:value="France" />
+                           <String fx:value="Israel" />
+                           <String fx:value="Italy" />
+                           <String fx:value="United Kingdom" />
+                           <String fx:value="United States of America" />
+                        </FXCollections>
+                     </items>
+                  </ComboBox>
+                  <ComboBox fx:id="to" layoutX="342.0" layoutY="86.0" prefHeight="31.0" prefWidth="201.0" promptText="to" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <items>
+                        <FXCollections fx:factory="observableArrayList">
+                           <String fx:value="Austria" />
+                           <String fx:value="Brazil" />
+                           <String fx:value="China" />
+                           <String fx:value="Denmark" />
+                           <String fx:value="Egypt" />
+                           <String fx:value="France" />
+                           <String fx:value="Israel" />
+                           <String fx:value="Italy" />
+                           <String fx:value="United Kingdom" />
+                           <String fx:value="United States of America" />
+                        </FXCollections>
+                     </items>
+                  </ComboBox>
+               </children>
+            </GridPane>
+            <Button layoutX="848.0" layoutY="83.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="143.0" text="Search4U" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

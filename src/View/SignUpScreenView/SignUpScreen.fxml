@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="733.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.SignUpScreenView.SignUpController">
+   <children>
+      <AnchorPane layoutX="-26.0" prefHeight="523.0" prefWidth="759.0" styleClass="bodybg" stylesheets="@../images/background.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-26.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <AnchorPane layoutX="-10.0" layoutY="-8.0" prefHeight="523.0" prefWidth="743.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane layoutX="103.0" layoutY="53.0" opacity="0.78" prefHeight="448.0" prefWidth="554.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="103.0" AnchorPane.rightAnchor="76.0" AnchorPane.topAnchor="53.0">
+               <children>
+                  <Label layoutX="79.0" layoutY="14.0" prefHeight="21.0" prefWidth="411.0" text="Wellcome to Vacation4U" textFill="#0d186b">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+            <Button fx:id="canc" layoutX="397.0" layoutY="442.0" mnemonicParsing="false" onMouseClicked="#goToSearch" prefHeight="41.0" prefWidth="122.0" text="cancel" />
+            <GridPane layoutX="160.0" layoutY="150.0" prefHeight="268.0" prefWidth="404.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="262.0" minWidth="10.0" prefWidth="185.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="285.0" minWidth="10.0" prefWidth="219.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label prefHeight="21.0" prefWidth="130.0" text="First name" />
+                  <TextField GridPane.columnIndex="1" />
+                  <Label layoutX="10.0" layoutY="19.0" prefHeight="21.0" prefWidth="130.0" text="Last Name" GridPane.rowIndex="1" />
+                  <TextField layoutX="232.0" layoutY="14.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label layoutX="10.0" layoutY="57.0" prefHeight="21.0" prefWidth="130.0" text="Password" GridPane.rowIndex="3" />
+                  <Label layoutX="10.0" layoutY="110.0" prefHeight="21.0" prefWidth="130.0" text="Email" GridPane.rowIndex="2" />
+                  <TextField layoutX="232.0" layoutY="43.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField layoutX="232.0" layoutY="74.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label layoutX="10.0" layoutY="147.0" prefHeight="21.0" prefWidth="130.0" text="Confirm Password" GridPane.rowIndex="4" />
+                  <Label layoutX="10.0" layoutY="147.0" prefHeight="21.0" prefWidth="130.0" text="Birth date" GridPane.rowIndex="5" />
+                  <TextField layoutX="250.0" layoutY="142.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField layoutX="250.0" layoutY="193.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <Label layoutX="10.0" layoutY="198.0" prefHeight="21.0" prefWidth="130.0" text="City" GridPane.rowIndex="6" />
+                  <DatePicker id="StartDatePicker" prefHeight="25.0" prefWidth="373.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+               </children>
+            </GridPane>
+            <Button fx:id="bt_sup" layoutX="220.0" layoutY="442.0" mnemonicParsing="false" onMouseClicked="#handleAddUser" prefHeight="41.0" prefWidth="122.0" text="Sign Up" />
+            <MenuBar layoutX="10.0" layoutY="8.0" prefHeight="10.0" prefWidth="662.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <menus>
+                  <Menu fx:id="profile" mnemonicParsing="false" text="My Profil">
+                     <items>
+                        <MenuItem fx:id="View_profile1" mnemonicParsing="false" text="Sign Up" />
+                        <MenuItem fx:id="View_profile" mnemonicParsing="false" text="View" />
+                        <MenuItem fx:id="Edit_profile" mnemonicParsing="false" text="Edit" />
+                        <MenuItem fx:id="Delete_profile" mnemonicParsing="false" text="Delete" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Sell Vacation">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="New Vacation" />
+                        <MenuItem mnemonicParsing="false" text="buyers suggestions" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Buy Now!">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Search vacation" />
+                        <MenuItem mnemonicParsing="false" text="My vacation Cart" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="profile1" mnemonicParsing="false" text="Log in">
+                     <items>
+                        <MenuItem fx:id="View_profile11" mnemonicParsing="false" text="Sign in" />
+                        <MenuItem fx:id="View_profil" mnemonicParsing="false" text="Sign out" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Exit">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Exit" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

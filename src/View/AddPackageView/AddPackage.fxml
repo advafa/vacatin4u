@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="629.0" prefWidth="927.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.AddPackageView.AddPackageController">
+    <stylesheets>
+    </stylesheets>
+   <children>
+      <AnchorPane layoutX="-42.0" layoutY="32.0" prefHeight="615.0" prefWidth="1015.0" styleClass="bodybg" stylesheets="@../images/background.css" AnchorPane.bottomAnchor="-12.0" AnchorPane.leftAnchor="-42.0" AnchorPane.rightAnchor="-46.0" AnchorPane.topAnchor="32.0">
+         <children>
+            <AnchorPane layoutX="122.0" layoutY="32.0" opacity="0.65" prefHeight="545.0" prefWidth="772.0" style="-fx-background-color: #ffffff;" />
+            <GridPane fx:id="hotel" layoutX="141.0" layoutY="115.0" prefHeight="370.0" prefWidth="722.0" AnchorPane.leftAnchor="141.0" AnchorPane.rightAnchor="152.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="262.0" minWidth="10.0" prefWidth="191.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="262.0" minWidth="10.0" prefWidth="189.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="262.0" minWidth="10.0" prefWidth="177.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="285.0" minWidth="10.0" prefWidth="156.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="48.0" minHeight="9.0" prefHeight="24.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="97.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="110.0" minHeight="7.0" prefHeight="8.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="110.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="110.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="220.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="220.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="101.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="107.0" minHeight="10.0" prefHeight="64.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="105.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="105.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label prefHeight="21.0" prefWidth="130.0" text="Check in" />
+                  <Label layoutX="10.0" layoutY="19.0" prefHeight="21.0" prefWidth="130.0" text="Check out" GridPane.columnIndex="1" />
+                  <TextField layoutX="232.0" layoutY="14.0" prefHeight="31.0" prefWidth="141.0" GridPane.rowIndex="4" />
+                  <Label layoutX="10.0" layoutY="57.0" prefHeight="21.0" prefWidth="130.0" text="To" GridPane.columnIndex="3" />
+                  <Label layoutX="10.0" layoutY="110.0" prefHeight="21.0" prefWidth="130.0" text="From" GridPane.columnIndex="2" />
+                  <TextField layoutX="232.0" layoutY="74.0" GridPane.rowIndex="7" />
+                  <Label layoutX="10.0" layoutY="147.0" prefHeight="21.0" prefWidth="130.0" text="Airline" GridPane.rowIndex="3" />
+                  <TextField layoutX="250.0" layoutY="193.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                  <Label layoutX="10.0" layoutY="198.0" prefHeight="21.0" prefWidth="130.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <DatePicker id="StartDatePicker" fx:id="checkin" prefHeight="31.0" prefWidth="197.0" GridPane.rowIndex="1" />
+                  <ComboBox fx:id="checked_baggage" prefHeight="31.0" prefWidth="176.0" promptText="Checked Baggage" value="Checked Baggage" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                     <items>
+                        <FXCollections fx:factory="observableArrayList">
+                           <String fx:value="Not included" />
+                           <String fx:value="1x Checked baggage" />
+                           <String fx:value="2x Checked baggage" />
+                           <String fx:value="3x Checked baggage" />
+                        </FXCollections>
+                     </items>
+                  </ComboBox>
+                  <ComboBox fx:id="hand_baggage" prefHeight="31.0" prefWidth="191.0" promptText="Hand baggage" value="Hand baggage" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                     <items>
+                        <FXCollections fx:factory="observableArrayList">
+                           <String fx:value="Not included" />
+                           <String fx:value="1x Hand baggage" />
+                           <String fx:value="2x Hand baggage" />
+                           <String fx:value="3x Hand baggage" />
+                        </FXCollections>
+                     </items>
+                  </ComboBox>
+                  <DatePicker id="StartDatePicker" fx:id="checkout" layoutX="10.0" layoutY="84.0" prefHeight="31.0" prefWidth="165.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ComboBox fx:id="from" layoutX="342.0" layoutY="269.0" prefHeight="31.0" prefWidth="181.0" promptText="From" value="Israel" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <items>
+                        <FXCollections fx:factory="observableArrayList">
+                           <String fx:value="Austria" />
+                           <String fx:value="Brazil" />
+                           <String fx:value="China" />
+                           <String fx:value="Denmark" />
+                           <String fx:value="Egypt" />
+                           <String fx:value="France" />
+                           <String fx:value="Israel" />
+                           <String fx:value="Italy" />
+                           <String fx:value="United Kingdom" />
+                           <String fx:value="United States of America" />
+                        </FXCollections>
+                     </items>
+                  </ComboBox>
+                  <ComboBox fx:id="to" layoutX="342.0" layoutY="86.0" prefHeight="31.0" prefWidth="201.0" promptText="to" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <items>
+                        <FXCollections fx:factory="observableArrayList">
+                           <String fx:value="Austria" />
+                           <String fx:value="Brazil" />
+                           <String fx:value="China" />
+                           <String fx:value="Denmark" />
+                           <String fx:value="Egypt" />
+                           <String fx:value="France" />
+                           <String fx:value="Israel" />
+                           <String fx:value="Italy" />
+                           <String fx:value="United Kingdom" />
+                           <String fx:value="United States of America" />
+                        </FXCollections>
+                     </items>
+                  </ComboBox>
+                  <Label layoutX="198.0" layoutY="134.0" prefHeight="21.0" prefWidth="130.0" text="Baggage included" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <Label layoutX="198.0" layoutY="134.0" prefHeight="21.0" prefWidth="130.0" text="Number of tickets" GridPane.rowIndex="6" />
+                  <CheckBox mnemonicParsing="false" text="Separately" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <ComboBox fx:id="Flight" layoutX="369.0" layoutY="40.0" prefHeight="31.0" prefWidth="171.0" promptText="Flight" GridPane.rowIndex="8">
+                     <items>
+                        <FXCollections fx:factory="observableArrayList">
+                           <String fx:value="Connecting flight" />
+                           <String fx:value="Direct flight" />
+                        </FXCollections>
+                     </items>
+                  </ComboBox>
+                  <ComboBox fx:id="vacation" layoutX="10.0" layoutY="354.0" prefHeight="31.0" prefWidth="158.0" promptText="Vacation Type" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                     <items>
+                        <FXCollections fx:factory="observableArrayList">
+                           <String fx:value="Cheap vacations" />
+                           <String fx:value="Shopping" />
+                           <String fx:value="Exotic" />
+                           <String fx:value="Romantic" />
+                           <String fx:value="Culinary" />
+                           <String fx:value="Urban" />
+                        </FXCollections>
+                     </items>
+                  </ComboBox>
+                  <ComboBox fx:id="vacation1" layoutX="198.0" layoutY="354.0" prefHeight="31.0" prefWidth="158.0" promptText="Ticket Type" GridPane.columnIndex="2" GridPane.rowIndex="8">
+                     <items>
+                        <FXCollections fx:factory="observableArrayList">
+                           <String fx:value="baby" />
+                           <String fx:value="child" />
+                           <String fx:value="adult" />
+                        </FXCollections>
+                     </items>
+                  </ComboBox>
+                  <Label layoutX="10.0" layoutY="225.0" prefHeight="21.0" prefWidth="130.0" text="Original price" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                  <Label layoutX="369.0" layoutY="225.0" prefHeight="21.0" prefWidth="183.0" text="Asking price for sale" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                  <TextField layoutX="369.0" layoutY="268.0" prefHeight="31.0" prefWidth="156.0" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                  <ComboBox fx:id="hotel" layoutX="367.0" layoutY="298.0" prefHeight="31.0" prefWidth="158.0" promptText="Hotel Type" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                     <items>
+                        <FXCollections fx:factory="observableArrayList">
+                           <String fx:value="Hotel" />
+                           <String fx:value="B and B" />
+                           <String fx:value="A rented room" />
+                        </FXCollections>
+                     </items>
+                  </ComboBox>
+                  <CheckBox layoutX="197.0" layoutY="217.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="192.0" text="Back flight included" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox layoutX="197.0" layoutY="217.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="143.0" text="Hotel included" GridPane.rowIndex="10" />
+                  <ComboBox fx:id="hotel_rating" layoutX="197.0" layoutY="356.0" prefHeight="31.0" prefWidth="158.0" promptText="Hotel Raiting" GridPane.columnIndex="2" GridPane.rowIndex="10">
+                     <items>
+                        <FXCollections fx:factory="observableArrayList">
+                           <String fx:value="1" />
+                           <String fx:value="2" />
+                           <String fx:value="3" />
+                           <String fx:value="4" />
+                           <String fx:value="5" />
+                        </FXCollections>
+                     </items>
+                  </ComboBox>
+               </children>
+            </GridPane>
+            <Button fx:id="bt_sup" layoutX="219.0" layoutY="515.0" mnemonicParsing="false" onMouseClicked="#handleAddUser" prefHeight="41.0" prefWidth="578.0" text="Add" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="180.0" />
+            <Label layoutX="292.0" layoutY="51.0" prefHeight="21.0" prefWidth="411.0" text="Add a New Vacation4Sale" textFill="#0d186b">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <MenuBar layoutX="6.0" prefHeight="10.0" prefWidth="662.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <menus>
+            <Menu fx:id="profile" mnemonicParsing="false" text="My Profil">
+               <items>
+                  <MenuItem fx:id="View_profile1" mnemonicParsing="false" text="Sign Up" />
+                  <MenuItem fx:id="View_profile" mnemonicParsing="false" text="View" />
+                  <MenuItem fx:id="Edit_profile" mnemonicParsing="false" text="Edit" />
+                  <MenuItem fx:id="Delete_profile" mnemonicParsing="false" text="Delete" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Sell Vacation">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="New Vacation" />
+                  <MenuItem mnemonicParsing="false" text="View Vacation" />
+                  <MenuItem mnemonicParsing="false" text="Edit Vacation" />
+                  <MenuItem mnemonicParsing="false" text="Delete Vacation" />
+                  <MenuItem mnemonicParsing="false" text="suggestion" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Buy Now!">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Search vacation" />
+                  <MenuItem mnemonicParsing="false" text="My vacation Cart" />
+               </items>
+            </Menu>
+            <Menu fx:id="profile1" mnemonicParsing="false" text="Log in">
+               <items>
+                  <MenuItem fx:id="View_profile11" mnemonicParsing="false" text="Sign in" />
+                  <MenuItem fx:id="View_profil" mnemonicParsing="false" text="Sign out" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Exit">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Exit" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>

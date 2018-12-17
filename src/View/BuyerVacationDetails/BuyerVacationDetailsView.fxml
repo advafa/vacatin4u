@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.VacationDetails.VacationDetailsView">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="5.0" layoutY="5.0" prefHeight="629.0" prefWidth="927.0" stylesheets="&#10;    ">
+         <children>
+            <AnchorPane layoutX="-96.0" layoutY="32.0" prefHeight="615.0" prefWidth="1015.0" styleClass="bodybg" stylesheets="@../images/background.css" AnchorPane.bottomAnchor="-12.0" AnchorPane.leftAnchor="-96.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="32.0">
+               <children>
+                  <AnchorPane layoutX="172.0" layoutY="8.0" opacity="0.65" prefHeight="600.0" prefWidth="807.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="172.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="8.0">
+                     <children>
+                        <Label layoutX="42.0" prefHeight="21.0" prefWidth="411.0" text="Vacation Details" textFill="#0d186b">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="status" layoutX="390.0" prefHeight="21.0" prefWidth="411.0" text="Vacation Status">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                     </children></AnchorPane>
+                  <Button fx:id="bt_sup" layoutX="226.0" layoutY="555.0" mnemonicParsing="false" onMouseClicked="#handleAddUser" prefHeight="42.0" prefWidth="225.0" text="Buy Now" />
+                  <Button layoutX="563.0" layoutY="555.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="225.0" text="Back" />
+               </children>
+            </AnchorPane>
+            <MenuBar layoutX="6.0" prefHeight="10.0" prefWidth="662.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <menus>
+                  <Menu fx:id="profile" mnemonicParsing="false" text="My Profil">
+                     <items>
+                        <MenuItem fx:id="View_profile1" mnemonicParsing="false" text="Sign Up" />
+                        <MenuItem fx:id="View_profile" mnemonicParsing="false" text="View" />
+                        <MenuItem fx:id="Edit_profile" mnemonicParsing="false" text="Edit" />
+                        <MenuItem fx:id="Delete_profile" mnemonicParsing="false" text="Delete" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Sell Vacation">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="New Vacation" />
+                        <MenuItem mnemonicParsing="false" text="View Vacation" />
+                        <MenuItem mnemonicParsing="false" text="Edit Vacation" />
+                        <MenuItem mnemonicParsing="false" text="Delete Vacation" />
+                        <MenuItem mnemonicParsing="false" text="suggestion" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Buy Now!">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Search vacation" />
+                        <MenuItem mnemonicParsing="false" text="My vacation Cart" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="profile1" mnemonicParsing="false" text="Log in">
+                     <items>
+                        <MenuItem fx:id="View_profile11" mnemonicParsing="false" text="Sign in" />
+                        <MenuItem fx:id="View_profil" mnemonicParsing="false" text="Sign out" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Exit">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Exit" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+            <GridPane fx:id="hotel" layoutX="146.0" layoutY="90.0" prefHeight="453.0" prefWidth="656.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="262.0" minWidth="10.0" prefWidth="191.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="262.0" minWidth="10.0" prefWidth="189.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="262.0" minWidth="10.0" prefWidth="177.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="285.0" minWidth="10.0" prefWidth="156.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="48.0" minHeight="9.0" prefHeight="24.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="110.0" minHeight="10.0" prefHeight="24.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="110.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="110.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="220.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="220.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="101.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="105.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="105.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="105.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="105.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="105.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label prefHeight="21.0" prefWidth="130.0" text="Check in" underline="true">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <Label layoutX="10.0" layoutY="19.0" prefHeight="21.0" prefWidth="130.0" text="Check out" underline="true" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <Label layoutX="10.0" layoutY="57.0" prefHeight="21.0" prefWidth="130.0" text="To" GridPane.columnIndex="3" />
+                  <Label layoutX="10.0" layoutY="110.0" prefHeight="21.0" prefWidth="130.0" text="From" underline="true" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <Label layoutX="10.0" layoutY="147.0" prefHeight="21.0" prefWidth="130.0" text="Airline" underline="true" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <Label layoutX="10.0" layoutY="198.0" prefHeight="21.0" prefWidth="130.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label layoutX="198.0" layoutY="134.0" prefHeight="21.0" prefWidth="130.0" text="Baggage included" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <Label layoutX="198.0" layoutY="134.0" prefHeight="21.0" prefWidth="130.0" text="Number of tickets" GridPane.rowIndex="11" />
+                  <Label layoutX="10.0" layoutY="225.0" prefHeight="21.0" prefWidth="130.0" text="Price" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                  <Label layoutX="369.0" layoutY="225.0" prefHeight="21.0" prefWidth="183.0" text="Off" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+                  <Label fx:id="check_in" prefHeight="26.0" prefWidth="185.0" text="Label" GridPane.rowIndex="1" />
+                  <Label fx:id="backf" layoutX="10.0" layoutY="38.0" prefHeight="26.0" prefWidth="185.0" text="Back flight included" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Label fx:id="from" layoutX="204.0" layoutY="38.0" prefHeight="26.0" prefWidth="185.0" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Label fx:id="to" layoutX="395.0" layoutY="55.0" prefHeight="26.0" prefWidth="185.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <Label fx:id="check_out" layoutX="10.0" layoutY="39.0" prefHeight="26.0" prefWidth="185.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label fx:id="airline" layoutX="204.0" layoutY="39.0" prefHeight="26.0" prefWidth="185.0" text="Label" GridPane.rowIndex="4" />
+                  <Label fx:id="checkbag" layoutX="395.0" layoutY="39.0" prefHeight="26.0" prefWidth="185.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                  <Label fx:id="handbag" layoutX="395.0" layoutY="39.0" prefHeight="26.0" prefWidth="185.0" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <Label fx:id="num" layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="185.0" text="Label" GridPane.rowIndex="12" />
+                  <Label fx:id="conectin" layoutX="10.0" layoutY="200.0" prefHeight="26.0" prefWidth="185.0" text="Flight" GridPane.rowIndex="7" />
+                  <Label fx:id="off" layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="185.0" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+                  <Label fx:id="vac_type" layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="185.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <Label fx:id="price" layoutX="10.0" layoutY="306.0" prefHeight="26.0" prefWidth="185.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                  <Label fx:id="tic_type" layoutX="204.0" layoutY="306.0" prefHeight="26.0" prefWidth="185.0" text="Ticket Type" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                  <Label layoutX="10.0" layoutY="303.0" prefHeight="26.0" prefWidth="185.0" text="Flight" GridPane.rowIndex="6" />
+                  <Label layoutX="204.0" layoutY="303.0" prefHeight="26.0" prefWidth="185.0" text="Vacation Type" underline="true" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <Label layoutX="395.0" layoutY="303.0" prefHeight="26.0" prefWidth="185.0" text="Ticket Type" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                  <Label fx:id="hotel" layoutX="10.0" layoutY="303.0" prefHeight="26.0" prefWidth="185.0" text="Hotel included" GridPane.rowIndex="9">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <Label fx:id="hotel_type" layoutX="204.0" layoutY="303.0" prefHeight="26.0" prefWidth="185.0" text="Hotel Type" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <Label fx:id="hotel_raiting" layoutX="204.0" layoutY="346.0" prefHeight="26.0" prefWidth="185.0" text="Hotel Raiting" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                  <Label layoutX="361.0" layoutY="396.0" prefHeight="21.0" prefWidth="183.0" text="Seller" GridPane.columnIndex="3" GridPane.rowIndex="11" />
+                  <Label fx:id="off1" layoutX="361.0" layoutY="430.0" prefHeight="26.0" prefWidth="185.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="12" />
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
