@@ -14,6 +14,7 @@ public class Order {
         this.buyer_email=buyer_email;
         this.vacation_id=vacation_id;
         this.buyer_status=buyer_status;
+//        this.buyer_status=buyer_status;
     }
 
 
