@@ -5,8 +5,8 @@ import java.time.format.DateTimeFormatter;
 
 public class Package {
 
-    private static int vacation_count;
-    private boolean vacation_status;
+    private static int vacation_count=0;
+    private boolean vacation_status;//true=available for sale, false=sold out
 
     private String seller_email;
     private int vacation_id;
@@ -79,8 +79,49 @@ public class Package {
         this.original_price= original_price;
         this.sale_price= sale_price;
         this.off= off;
+    }
+
+    public Package(String seller_email, String from, String to,
+                   LocalDate checkin, LocalDate checkout, String airline, boolean back_flight,
+                   String hand_bag, String checked_bag, String connec_flight, String vacation_type,
+                   String ticket_type, boolean hotel, String hotel_type, int hotel_raiting, int num_of_tickets,
+                   boolean separately, int original_price, int sale_price, int off){
+
+        this.vacation_status=true;//true=available for sale, false=sold out
+
+        this.seller_email= seller_email;
+        this.vacation_id=this.vacation_count;
+
+        this.from= from;
+        this.to= to;
+        this.checkin= checkin;
+        this.checkout=checkout;
+
+        this.airline= airline;
+        this.back_flight= back_flight;
+
+        this.hand_bag= hand_bag;
+        this.checked_bag= checked_bag;
+
+        this.connec_flight= connec_flight;
+
+        this.vacation_type= vacation_type;
+        this.ticket_type= ticket_type;
+
+        this.hotel= hotel;
+        this.hotel_type= hotel_type;
+        this.hotel_raiting= hotel_raiting;
+
+        this.num_of_tickets= num_of_tickets;
+        this.separately= separately;
+
+        this.original_price= original_price;
+        this.sale_price= sale_price;
+        this.off= off;
         this.vacation_count=this.vacation_count++;
     }
+
+
 
     public Package(String seller_email, int vacation_id, String checkin, String checkout) {
 
@@ -172,4 +213,6 @@ public class Package {
         return this.checkout.format(formatter);
     }
 
-    }
+
+
+}

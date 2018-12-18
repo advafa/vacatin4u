@@ -9,8 +9,4 @@ public class AbstractController {
     public void setViewModel(ViewModel viewModel) {
         this.viewModel = viewModel;
     }
-
-    public void exitApp(MouseEvent mouseEvent) {
-        System.exit(0);
-    }
 }

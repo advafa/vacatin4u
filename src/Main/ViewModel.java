@@ -11,6 +11,7 @@ import App.User;
 import Model.Model;
 import View.AddPackageView.AddPackageController;
 import View.AddProductView.AddProductController;
+import View.BuyerVacationDetails.BuyerVacationDetailsController;
 import View.PackageDescriptionView.PackageDescriptionView;
 import View.SearchView.SearchViewController;
 import View.SignInScreenView.SignInController;
@@ -32,8 +33,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ViewModel extends Application
-{
+public class ViewModel extends Application {
 
     //init xy offsets
     private double xOffset = 0;
@@ -54,9 +54,11 @@ public class ViewModel extends Application
     private PackageDescriptionView packageDescriptionViewController;
     private Scene searchView;
     private SearchViewController searchViewController;
+    private Scene buyerVacationDetail;
+    private BuyerVacationDetailsController buyerVacationDetailViewController;
 
     private Order orderforSeller;
-    private  Order orderforBuyer;
+    private Order orderforBuyer;
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -81,6 +83,9 @@ public class ViewModel extends Application
         FXMLLoader searchViewLoader = new FXMLLoader(getClass().getResource("../View/SearchView/SearchScreen.fxml"));
         Parent searchViewRoot = (Parent) searchViewLoader.load();
 
+        FXMLLoader buyerVacationDetailViewLoader = new FXMLLoader(getClass().getResource("../View/BuyerVacationDetails/BuyerVacationDetailsView.fxml"));
+        Parent buyerVacationDetailViewRoot = (Parent) buyerVacationDetailViewLoader.load();
+
         this.stage = stage;
         this.stage.initStyle(StageStyle.UNDECORATED);
 
@@ -92,6 +97,7 @@ public class ViewModel extends Application
         setDraggable(stage, addProductRoot);
         setDraggable(stage, packageDescriptionRoot);
         setDraggable(stage, searchViewRoot);
+        setDraggable(stage, buyerVacationDetailViewRoot);
 
         signUpScene = new Scene(signUpRoot);
         signInScene = new Scene(signInRoot);
@@ -100,6 +106,7 @@ public class ViewModel extends Application
         addProductScene = new Scene(addProductRoot);
         PackageDescriptionView = new Scene(packageDescriptionRoot);
         searchView = new Scene(searchViewRoot);
+        buyerVacationDetail = new Scene(buyerVacationDetailViewRoot);
 
         Model model = new Model();
         setModel(model);
@@ -124,15 +131,22 @@ public class ViewModel extends Application
         searchViewController = searchViewLoader.getController();
         searchViewController.setViewModel(this);
 
+        buyerVacationDetailViewController = buyerVacationDetailViewLoader.getController();
+        buyerVacationDetailViewController.setViewModel(this);
+
 //        stage.setScene(signInScene);
         stage.setScene(searchView);
         stage.show();
     }
 
-    public void addUser(User user) { model.addUser(user);}
+    public void addUser(User user) {
+        model.addUser(user);
+    }
+
     public User getUser() {
         return this.user;
     }
+
     public Boolean isUserExists(User user) {
         return model.isUserExists(user);
     }
@@ -148,7 +162,13 @@ public class ViewModel extends Application
     }
 
 
-    public void goToSearchView() {stage.setScene(searchView); }
+    public void goToSearchView() {
+        stage.setScene(searchView);
+    }
+
+    public void goToDetails() {
+        stage.setScene(vaca);
+    }
 
     public void goToSignIn() {
         user = null;
@@ -156,23 +176,41 @@ public class ViewModel extends Application
     }
 
 
-
-
     //*****************Update************************
-    public void setUser(User user) {model.UpdateUser(user);}
-    public void setSellerStatus(Order ord, boolean sellerStatus){model.UpdateOrdersSellerStatus(ord,sellerStatus);};
-    public void setBuyerStatus(Order ord, boolean buyerStatus){model.UpdateOrdersBuyerStatus(ord, buyerStatus);}
-    public void setVacationStatus(int vacation_id, boolean vac_status){model.UpdatVacationStatus(vacation_id, vac_status);}
+    public void setUser(User user) {
+        model.UpdateUser(user);
+    }
+
+    public void setSellerStatus(Order ord, boolean sellerStatus) {
+        model.UpdateOrdersSellerStatus(ord, sellerStatus);
+    }
+
+    ;
+
+    public void setBuyerStatus(Order ord, boolean buyerStatus) {
+        model.UpdateOrdersBuyerStatus(ord, buyerStatus);
+    }
+
+    public void setVacationStatus(int vacation_id, boolean vac_status) {
+        model.UpdatVacationStatus(vacation_id, vac_status);
+    }
 
 
     ///**************delete
-    public void deleteUser(User user){model.deleteUser(user);}
+    public void deleteUser(User user) {
+        model.deleteUser(user);
+    }
 
-    ///************************
+    ///************************Get
+
+    public List<Order> getOrdersByBuyer_email() {
+        return model.getOrdersByBuyer_email(user.getEmail());
+    }
+
+    //******************************
 
     public void setDraggable(Stage stage, Parent parent) {
-        parent.setOnMousePressed(new EventHandler<MouseEvent>()
-        {
+        parent.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
                 xOffset = event.getSceneX();
@@ -180,8 +218,7 @@ public class ViewModel extends Application
             }
         });
         //set mouse drag
-        parent.setOnMouseDragged(new EventHandler<MouseEvent>()
-        {
+        parent.setOnMouseDragged(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
                 stage.setX(event.getScreenX() - xOffset);
@@ -203,13 +240,6 @@ public class ViewModel extends Application
     }
 
 
-
-
-
-
-
-
-
     public void goToUserView() {
         userViewController.loadUserData(user);
         userViewController.setUser(user);
@@ -225,21 +255,10 @@ public class ViewModel extends Application
         stage.setScene(addProductScene);
     }
 
-    public void addPackage(Package aPackage) {
-        model.addPackage(aPackage);
+    public void addVacation(Package vacation) {
+        model.addPackage(vacation);
     }
 
-    public void createNewPackage(Address address, String cancellation_policy, LocalDate startDate, LocalDate endDate) {
-        aPackage = new Package(user.getEmail(), 0, startDate, endDate);
-        aPackage.setAddress(address);
-        aPackage.setCancellation_policy(cancellation_policy);
-    }
-
-    public void addProductToPackage(int price, String categoryText, String description) {
-        Product product = new Product(user.getEmail(), 0, 0, price, categoryText);
-        product.description = description;
-        aPackage.addProduct(product);
-    }
 
     public void savePackage() {
         if (aPackage != null && aPackage.getProducts().size() > 0) {
@@ -253,18 +272,10 @@ public class ViewModel extends Application
         this.user = u;
     }
 
-    public List<Package> getPackagesOfUser() {
-        return model.getUserPackages(user.getEmail());
-    }
-
-
 
     public void discartPackage() {
         aPackage = null;
     }
-
-
-
 
 
     public List<String> getAllCategories() {
@@ -277,7 +288,7 @@ public class ViewModel extends Application
 
     public void searchPackagesBy(List<Package> packagesList) {
         packageDescriptionViewController.addPackagesToTable(packagesList);
-        if(user != null)
+        if (user != null)
             packageDescriptionViewController.setUserLoggedIn();
         else
             packageDescriptionViewController.setUserLoggedOut();
@@ -305,7 +316,7 @@ public class ViewModel extends Application
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
         LocalDate startDate = LocalDate.parse(clickedProductRow.getStartDate(), formatter);
         LocalDate endDate = LocalDate.parse(clickedProductRow.getEndDate(), formatter);
-        Order o = new Order(clickedProductRow.getOwnerEmail(), user.getEmail(),startDate,endDate,clickedProductRow.getPrice(),clickedProductRow.getPackageID(),"Rented");
+        Order o = new Order(clickedProductRow.getOwnerEmail(), user.getEmail(), startDate, endDate, clickedProductRow.getPrice(), clickedProductRow.getPackageID(), "Rented");
         model.addOrder(o);
     }
 
@@ -313,7 +324,7 @@ public class ViewModel extends Application
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
         LocalDate startDate = LocalDate.parse(clickedProductRow.getStartDate(), formatter);
         LocalDate endDate = LocalDate.parse(clickedProductRow.getEndDate(), formatter);
-        Order o = new Order(clickedProductRow.getOwnerEmail(), user.getEmail(),startDate,endDate,clickedProductRow.getPrice(),clickedProductRow.getPackageID(),"Traded");
+        Order o = new Order(clickedProductRow.getOwnerEmail(), user.getEmail(), startDate, endDate, clickedProductRow.getPrice(), clickedProductRow.getPackageID(), "Traded");
         model.addOrder(o);
     }
 
@@ -321,17 +332,49 @@ public class ViewModel extends Application
         return model.getUnOrderedUserPackages(user.getEmail());
     }
 
-    public void popAlert(String text) {
+
+    public List<Package> getPackagesByAddress(String city, String neighborhood, String street) {
+        return model.getPackagesByAddress(new Address(city, neighborhood, street));
+    }
+
+
+    ///***********8
+    public void popAlerterror(String text) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("error Dialog");
+        alert.setHeaderText(text);
+        alert.showAndWait();
+    }
+
+    public void popAlertinfo(String text) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Information Dialog");
         alert.setHeaderText(text);
         alert.showAndWait();
     }
 
-
-
-    public List<Package> getPackagesByAddress(String city, String neighborhood, String street) {
-        return model.getPackagesByAddress(new Address(city, neighborhood,street));
+    public void goToBuyerVacations() {
     }
 
+    public void goToPayPal() {
+    }
+
+    public String getUserNameByEmail(String email) {
+        model.getUserNameByEmail();
+    }
+
+    public void goToBuyerVacationDetails(Order clickedRow) {
+        int vacationID = clickedRow.getVacation_id();
+        Package vac = model.getPackageByPackageId(vacationID);
+        buyerVacationDetailViewController.setVacation(vac);
+        stage.setScene(buyerVacationDetail);
+    }
 }
+
+
+//    public void setUserLoggedOut(){
+//        rentBtn.setDisable(true);
+//        tradeBtn.setDisable(true);
+//        userViewBtn.setDisable(true);
+//        loginBtn.setDisable(false);
+//    }
